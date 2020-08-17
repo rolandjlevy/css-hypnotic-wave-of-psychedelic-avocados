@@ -6,5 +6,5 @@ Just a simple loading animation made in CSS
 
 + [Live demo](https://css-hypnotic-wave-of-dots.rjlevy.repl.co/)
 + [Source code](https://repl.it/@rjlevy/css-hypnotic-wave-of-dots)
-+ [Github repo](https://github.com/rolandjlevy/css-loading-bouncy-dots)
++ [Github repo](https://github.com/rolandjlevy/css-hypnotic-wave-of-dots)
 
