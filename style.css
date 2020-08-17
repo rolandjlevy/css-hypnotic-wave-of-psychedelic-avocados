@@ -1,11 +1,3 @@
-    /* <main>
-      <section class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-      </section>
-    </main> */
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -61,7 +53,7 @@ section > div:nth-child(5) {
     opacity: 1;
   }
   50% {
-    transform: translateY(-40px) scale(0.8, 1);
+    transform: translateY(-30px) scale(0.8, 1);
     opacity: 0.5;
   }
   100% {
