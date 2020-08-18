@@ -1,6 +1,6 @@
 # Hypnotic wave of dots
 
-Just a simple loading animation made in CSS
+Just a simple CSS loading animation
 
 ### Links
 

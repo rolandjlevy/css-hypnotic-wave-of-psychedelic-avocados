@@ -56,15 +56,15 @@ section.dots > div:nth-child(6) {
 
 @keyframes loading {
   0% {
-    transform: translateY(0) scale(1, 1);
+    transform: translateY(0) scaleX(1);
     opacity: 1;
   }
   50% {
-    transform: translateY(-30px) scale(0.8, 1);
+    transform: translateY(-30px) scaleX(0.7);
     opacity: 0.55;
   }
   100% {
-    transform: translateY(0) scale(1, 1);
+    transform: translateY(0) scaleX(1);
     opacity: 0.1;
   }
 }
