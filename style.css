@@ -29,12 +29,12 @@ section.dots > div {
   width: 40px;
   height: 60px;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  background: radial-gradient(at 60% bottom, yellow, green, blue);
+  background: radial-gradient(at 60% bottom, #d9ff00, #338000, blue);
   margin: 0 5px;
   animation: loading 1.8s ease-in-out infinite;
   opacity: 1; 
   mix-blend-mode: screen;
-  filter: drop-shadow(10px 10px 20px rgba(0, 6, 41, 0.8));
+  filter: drop-shadow(10px 10px 20px rgba(0, 6, 41, 0.9));
   transform: translateY(75px) rotate(0deg);
 }
 
@@ -69,6 +69,6 @@ section.dots > div:nth-child(6) {
   }
   50% {
     transform: translateY(-75px) rotate(360deg);
-    opacity: 0.3;
+    opacity: 0.2;
   }
 }
