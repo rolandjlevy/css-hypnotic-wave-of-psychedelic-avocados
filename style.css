@@ -1,8 +1,12 @@
-body {
+* {
   box-sizing: border-box;
+  /* border: 1px grey solid; */
+}
+
+body {
   margin: 0;
   padding: 0;
-  background: #333;
+  background: rgb(25, 29, 59);
 }
 
 main {
@@ -18,17 +22,20 @@ section.dots {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 section.dots > div {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #fff;
-  margin: 0;
-  animation: loading 0.9s ease-in-out infinite;
-  opacity: 0.3; 
+  width: 40px;
+  height: 60px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  background: radial-gradient(at 60% bottom, yellow, green, blue);
+  margin: 0 5px;
+  animation: loading 1.8s ease-in-out infinite;
+  opacity: 1; 
+  mix-blend-mode: screen;
+  filter: drop-shadow(10px 10px 20px rgba(0, 6, 41, 0.8));
+  transform: translateY(75px) rotate(0deg);
 }
 
 section.dots > div:nth-child(1) {
@@ -57,11 +64,11 @@ section.dots > div:nth-child(6) {
 
 @keyframes loading {
   0%, 100% {
-    transform: translateY(0);
-    opacity: 0.6;
+    transform: translateY(75px) rotate(0deg);
+    opacity: 1;
   }
   50% {
-    transform: translateY(-150px);
+    transform: translateY(-75px) rotate(360deg);
     opacity: 0.3;
   }
 }
