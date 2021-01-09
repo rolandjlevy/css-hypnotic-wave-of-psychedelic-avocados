@@ -15,6 +15,8 @@ main {
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 400px;
+  margin: 0 auto;
   height: 100vh;
 }
 
@@ -26,16 +28,40 @@ section.dots {
 }
 
 section.dots > div {
-  width: 40px;
+  width: 45px;
   height: 60px;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  background: radial-gradient(at 60% bottom, #d9ff00, #338000, blue);
-  margin: 0 5px;
-  animation: loading 1.8s ease-in-out infinite;
+  --mid-colour: 50;
+  background: radial-gradient(at 60% bottom, #d9ff00, var(--mid-colour), blue);
+  margin: 0 15px;
+  animation-name: loading, colourize; 
+  animation-duration: 1.8s, 18s;
+  animation-timing-function: ease-in-out, ease;
+  animation-iteration-count: infinite, infinite;
   opacity: 1; 
   mix-blend-mode: screen;
   filter: drop-shadow(10px 10px 20px rgba(0, 6, 41, 0.9));
-  transform: translateY(75px) rotate(0deg);
+  transform: translateY(75px) rotate(0deg) scale(1.2);
+}
+
+@keyframes loading {
+  0%, 100% {
+    transform: translateY(75px) rotate(0deg) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-75px) rotate(360deg) scale(1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes colourize {
+  0%, 100% {
+    --mid-colour: #338000;
+  }
+  50% {
+    --mid-colour: orangered;
+  }
 }
 
 section.dots > div:nth-child(1) {
@@ -60,15 +86,4 @@ section.dots > div:nth-child(5) {
 
 section.dots > div:nth-child(6) {
   animation-delay: 0.6s;
-}
-
-@keyframes loading {
-  0%, 100% {
-    transform: translateY(75px) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-75px) rotate(360deg);
-    opacity: 0.2;
-  }
 }
