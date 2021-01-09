@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
-  /* border: 1px grey solid; */
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: rgb(25, 29, 59);
+  background: rgb(19, 23, 53);
+  overflow: hidden;
 }
 
 main {
@@ -15,52 +15,83 @@ main {
   align-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 400px;
+  max-width: 60vmax;
   margin: 0 auto;
   height: 100vh;
 }
 
+section {
+  mix-blend-mode: screen;
+  animation: spin 30s linear infinite;
+}
+
 section.dots {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 2.5vmax; */
 }
 
 section.dots > div {
-  width: 45px;
-  height: 60px;
+  width: 4.5vmax;
+  height: 6vmax;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  --mid-colour: 50;
-  background: radial-gradient(at 60% bottom, #d9ff00, var(--mid-colour), blue);
-  margin: 0 15px;
+  margin: 2.5vmax;
   animation-name: loading, colourize; 
   animation-duration: 1.8s, 18s;
-  animation-timing-function: ease-in-out, ease;
+  animation-timing-function: ease-in-out, linear;
   animation-iteration-count: infinite, infinite;
   opacity: 1; 
   mix-blend-mode: screen;
-  filter: drop-shadow(10px 10px 20px rgba(0, 6, 41, 0.9));
-  transform: translateY(75px) rotate(0deg) scale(1.2);
+  background-blend-mode: screen;
+  filter: drop-shadow(1vmax 1vmax 2vmax rgba(0, 6, 41, 0.9));
+  transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
+  transition: background-color 5s ease;
+  background-image: radial-gradient(at 60% bottom, var(--highlight-colour), var(--mid-colour), var(--shadow-colour));
 }
 
 @keyframes loading {
   0%, 100% {
-    transform: translateY(75px) rotate(0deg) scale(1.2);
+    transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
     opacity: 1;
   }
   50% {
-    transform: translateY(-75px) rotate(360deg) scale(1);
+    transform: translateY(-7.5vmax) rotate(360deg) scale(1);
     opacity: 0.2;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
 @keyframes colourize {
   0%, 100% {
-    --mid-colour: #338000;
+    --highlight-colour: yellow;
+    --mid-colour: green;
+    --shadow-colour: blue;
   }
-  50% {
-    --mid-colour: orangered;
+  20% {
+    --highlight-colour: yellow;
+    --mid-colour: teal;
+    --shadow-colour:  maroon;
+  }
+  40% {
+    --highlight-colour: cyan;
+    --mid-colour: LimeGreen;
+    --shadow-colour: red;
+  }
+  60% {
+    --highlight-colour: gold;
+    --mid-colour: green;
+    --shadow-colour: red;
+  }
+  80% {
+    --highlight-colour: yellow;
+    --mid-colour: teal;
+    --shadow-colour: blue;
   }
 }
 
@@ -82,8 +113,4 @@ section.dots > div:nth-child(4) {
 
 section.dots > div:nth-child(5) {
   animation-delay: 0.5s;
-}
-
-section.dots > div:nth-child(6) {
-  animation-delay: 0.6s;
 }
