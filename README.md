@@ -1,6 +1,6 @@
 # Hypnotic wave of psychedelic avocados 🥑
 
-Experimenting with CSS animations. Varying animation-delay, transform and background colours
+This is what happens when you're stuck at home because of lockdown! Something strange like this appears... just experimenting with CSS animations. Varying animation-delay, transform and background colours.  
 
 ### Links
 
