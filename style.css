@@ -29,7 +29,6 @@ section.dots {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-bottom: 2.5vmax; */
 }
 
 section.dots > div {
@@ -41,7 +40,7 @@ section.dots > div {
   animation-duration: 1.8s, 18s;
   animation-timing-function: ease-in-out, linear;
   animation-iteration-count: infinite, infinite;
-  opacity: 1; 
+  opacity: 0.2;
   mix-blend-mode: screen;
   background-blend-mode: screen;
   filter: drop-shadow(1vmax 1vmax 2vmax rgba(0, 6, 41, 0.9));
@@ -53,11 +52,11 @@ section.dots > div {
 @keyframes loading {
   0%, 100% {
     transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
-    opacity: 1;
+    opacity: 0.2;
   }
   50% {
     transform: translateY(-7.5vmax) rotate(360deg) scale(1);
-    opacity: 0.2;
+    opacity: 1;
   }
 }
 
@@ -92,7 +91,7 @@ section.dots > div {
     --highlight-colour: yellow;
     --mid-colour: teal;
     --shadow-colour: blue;
-  }
+  }#ecff3d#008031#070069#4400ff
 }
 
 section.dots > div:nth-child(1) {
