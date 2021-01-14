@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(19, 23, 53);
+  background: rgb(13, 16, 39);
   overflow: hidden;
 }
 
@@ -25,13 +25,13 @@ section {
   animation: spin 30s linear infinite;
 }
 
-section.dots {
+section.blobs {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section.dots > div {
+section.blobs > div {
   width: 4.5vmax;
   height: 6vmax;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
@@ -94,22 +94,22 @@ section.dots > div {
   }#ecff3d#008031#070069#4400ff
 }
 
-section.dots > div:nth-child(1) {
+section.blobs > div:nth-child(1) {
   animation-delay: 0.1s;
 }
 
-section.dots > div:nth-child(2) {
+section.blobs > div:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-section.dots > div:nth-child(3) {
+section.blobs > div:nth-child(3) {
   animation-delay: 0.3s;
 }
 
-section.dots > div:nth-child(4) {
+section.blobs > div:nth-child(4) {
   animation-delay: 0.4s;
 }
 
-section.dots > div:nth-child(5) {
+section.blobs > div:nth-child(5) {
   animation-delay: 0.5s;
 }
