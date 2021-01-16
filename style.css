@@ -3,7 +3,10 @@
 }
 
 :root {
+  --wireframe-colour: hsl(233, 10%, 55%);
+  --duration: 1.8s;
   --opacity-light: 0.2;
+  --opacity-full: 1;
 }
 
 body {
@@ -11,7 +14,8 @@ body {
   padding: 0;
   background: hsl(233, 50%, 10%);
   overflow: hidden;
-  color: hsl(233, 13%, 46%);
+  color: var(--wireframe-colour);
+  font-family: 'Courier New', Courier, monospace;
 }
 
 main {
@@ -25,85 +29,42 @@ main {
   height: 100vh;
 }
 
-main > section {
-  mix-blend-mode: screen;
-  animation: spin 30s linear infinite;
-}
-
 main > section.blobs {
   display: flex;
   flex-direction: column;
   align-items: center;
+  mix-blend-mode: screen;
+  animation: spin 30s linear infinite;
 }
 
 main > section.blobs > div {
   width: 4.5vmax;
   height: 6vmax;
+  border: none;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
   margin: 2.5vmax;
   animation-name: loading, colourize; 
-  animation-duration: 1.8s, 18s;
+  animation-duration: var(--duration), var(--duration);
+  /* animation-duration: var(--duration), calc(var(--duration) * 10); */
   animation-timing-function: ease-in-out, linear;
   animation-iteration-count: infinite, infinite;
-  mix-blend-mode: screen;
+  animation-fill-mode: both, both;
+  mix-blend-mode: screen; 
   background-blend-mode: screen;
-  filter: drop-shadow(1vmax 1vmax 2vmax rgba(0, 6, 41, 0.9));
-  transition: background-color 5s ease;
-  transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
+  filter: drop-shadow(1vmax 1vmax 2vmax rgba(0, 6, 41, 0.9)); 
   background-image: radial-gradient(at 60% bottom, var(--highlight-colour), var(--mid-colour), var(--shadow-colour));
 }
 
-#toggle:checked ~ main.wireframe > section.blobs > div {
+#toggle:checked ~ main > section.blobs > div {
   background-image: none;
-  border: 1px solid #666;
-  opacity: 1;
-  --opacity-light: 1;
+  border: 1px solid var(--wireframe-colour);
   border-radius: 0;
+  --opacity-light: 1;
+  filter: none; 
 }
 
-#toggle:checked ~ main.wireframe > section.blobs {
-  border: 1px solid #666;
-}
-
-input[type=checkbox] {
-  position: absolute;
-  left: -1000px;
-}
-
-label.btn {
-  position: absolute;
-  display: inline-block;
-  top: 10px;
-  left: 30px;
-  cursor: pointer;
-}
-
-label.btn::before {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  left: -25px;
-  content: ' ';
-  width: 20px;
-  height: 20px;
-  background: hsl(231, 33%, 16%);
-}
-
-#toggle:checked ~ label.btn::after {
-  opacity: 1;
-}
-
-#toggle ~ label.btn::after {
-  position: absolute;
-  opacity: 0;
-  content: ' ';
-  top: 2px;
-  left: -20px;
-  width: 5px;
-  height: 10px;
-  border: solid hsl(232, 30%, 80%);
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+#toggle:checked ~ main > section.blobs {
+  border: 1px solid var(--wireframe-colour);
 }
 
 @keyframes loading {
@@ -113,7 +74,7 @@ label.btn::before {
   }
   50% {
     transform: translateY(-7.5vmax) rotate(360deg) scale(1);
-    opacity: 1;
+    opacity: var(--opacity-full);
   }
 }
 
@@ -169,4 +130,46 @@ section.blobs > div:nth-child(4) {
 
 section.blobs > div:nth-child(5) {
   animation-delay: 0.5s;
+}
+
+label.btn {
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  left: 30px;
+  cursor: pointer;
+}
+
+label.btn::before {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: -25px;
+  content: ' ';
+  width: 20px;
+  height: 20px;
+  background: hsl(231, 30%, 25%);
+}
+
+label.btn::after {
+  position: absolute;
+  opacity: 0;
+  content: ' ';
+  top: 2px;
+  left: -18px;
+  width: 5px;
+  height: 10px;
+  border: solid hsl(232, 30%, 80%);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease;
+}
+
+#toggle:checked ~ label.btn::after {
+  opacity: 1;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  left: -1000px;
 }
