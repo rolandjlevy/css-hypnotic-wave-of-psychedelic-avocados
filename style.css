@@ -2,11 +2,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --opacity-light: 0.2;
+}
+
 body {
-  margin: 0;
+  margin: 10px;
   padding: 0;
-  background: rgb(13, 16, 39);
+  background: hsl(233, 50%, 10%);
   overflow: hidden;
+  color: hsl(233, 13%, 46%);
 }
 
 main {
@@ -20,18 +25,18 @@ main {
   height: 100vh;
 }
 
-section {
+main > section {
   mix-blend-mode: screen;
   animation: spin 30s linear infinite;
 }
 
-section.blobs {
+main > section.blobs {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section.blobs > div {
+main > section.blobs > div {
   width: 4.5vmax;
   height: 6vmax;
   border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
@@ -40,19 +45,71 @@ section.blobs > div {
   animation-duration: 1.8s, 18s;
   animation-timing-function: ease-in-out, linear;
   animation-iteration-count: infinite, infinite;
-  opacity: 0.2;
   mix-blend-mode: screen;
   background-blend-mode: screen;
   filter: drop-shadow(1vmax 1vmax 2vmax rgba(0, 6, 41, 0.9));
-  transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
   transition: background-color 5s ease;
+  transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
   background-image: radial-gradient(at 60% bottom, var(--highlight-colour), var(--mid-colour), var(--shadow-colour));
+}
+
+#toggle:checked ~ main.wireframe > section.blobs > div {
+  background-image: none;
+  border: 1px solid #666;
+  opacity: 1;
+  --opacity-light: 1;
+  border-radius: 0;
+}
+
+#toggle:checked ~ main.wireframe > section.blobs {
+  border: 1px solid #666;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  left: -1000px;
+}
+
+label.btn {
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  left: 30px;
+  cursor: pointer;
+}
+
+label.btn::before {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: -25px;
+  content: ' ';
+  width: 20px;
+  height: 20px;
+  background: hsl(231, 33%, 16%);
+}
+
+#toggle:checked ~ label.btn::after {
+  opacity: 1;
+}
+
+#toggle ~ label.btn::after {
+  position: absolute;
+  opacity: 0;
+  content: ' ';
+  top: 2px;
+  left: -20px;
+  width: 5px;
+  height: 10px;
+  border: solid hsl(232, 30%, 80%);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 @keyframes loading {
   0%, 100% {
     transform: translateY(7.5vmax) rotate(0deg) scale(1.2);
-    opacity: 0.2;
+    opacity: var(--opacity-light);
   }
   50% {
     transform: translateY(-7.5vmax) rotate(360deg) scale(1);
@@ -91,7 +148,7 @@ section.blobs > div {
     --highlight-colour: yellow;
     --mid-colour: teal;
     --shadow-colour: blue;
-  }#ecff3d#008031#070069#4400ff
+  }
 }
 
 section.blobs > div:nth-child(1) {
