@@ -11,7 +11,7 @@
 }
 
 body {
-  margin: 10px;
+  margin: 0;
   padding: 0;
   background: hsl(233, 50%, 10%);
   overflow: hidden;
@@ -144,8 +144,9 @@ section.blobs > div:nth-child(5) {
 label.btn {
   position: relative;
   display: inline-block;
-  top: 10px;
-  left: 30px;
+  font-size: 1.5rem;
+  top: 20px;
+  left: 50px;
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -158,10 +159,10 @@ label.btn::before {
   position: absolute;
   display: inline-block;
   top: 0;
-  left: -25px;
+  left: -40px;
   content: ' ';
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: hsl(233, 17%, 32%);
   transition: background 0.2s ease;
 }
@@ -175,13 +176,17 @@ label.btn::after {
   opacity: 0;
   content: ' ';
   top: 2px;
-  left: -18px;
-  width: 5px;
-  height: 10px;
+  left: -30px;
+  width: 8px;
+  height: 16px;
   border: solid hsl(233, 36%, 86%);
-  border-width: 0 3px 3px 0;
+  border-width: 0 4px 4px 0;
   transform: rotate(45deg);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, border 0.2s ease;
+}
+
+label.btn:hover::after {
+  border-color: hsl(233, 100%, 98%);
 }
 
 #toggle:checked ~ label.btn::after {
