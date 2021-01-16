@@ -5,7 +5,7 @@
 :root {
   --wireframe-colour: hsl(233, 12%, 64%);
   --wireframe-colour-bright: hsl(233, 28%, 83%);
-  --duration: 1.8s;
+  --duration: 2.5s;
   --opacity-light: 0.2;
   --opacity-full: 1;
 }
