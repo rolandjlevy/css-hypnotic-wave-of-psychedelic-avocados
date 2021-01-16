@@ -3,7 +3,7 @@
 }
 
 :root {
-  --wireframe-colour: hsl(232, 12%, 64%);
+  --wireframe-colour: hsl(233, 12%, 64%);
   --wireframe-colour-bright: hsl(233, 28%, 83%);
   --duration: 1.8s;
   --opacity-light: 0.2;
@@ -162,7 +162,12 @@ label.btn::before {
   content: ' ';
   width: 20px;
   height: 20px;
-  background: hsl(231, 20%, 25%);
+  background: hsl(233, 17%, 32%);
+  transition: background 0.2s ease;
+}
+
+label.btn:hover::before {
+  background: hsl(233, 11%, 45%);
 }
 
 label.btn::after {
@@ -173,7 +178,7 @@ label.btn::after {
   left: -18px;
   width: 5px;
   height: 10px;
-  border: solid hsl(232, 30%, 80%);
+  border: solid hsl(233, 36%, 86%);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   transition: opacity 0.2s ease;
