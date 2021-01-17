@@ -107,7 +107,7 @@ main > section.blobs > div {
   40% {
     --highlight-colour: cyan;
     --mid-colour: LimeGreen;
-    --shadow-colour: red;
+    --shadow-colour: deeppink;
   }
   60% {
     --highlight-colour: gold;
