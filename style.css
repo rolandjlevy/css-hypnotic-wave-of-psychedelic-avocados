@@ -8,6 +8,9 @@
   --duration: 2.5s;
   --opacity-light: 0.2;
   --opacity-full: 1;
+  --highlight-colour: yellow;
+  --mid-colour: green;
+  --shadow-colour: blue;
 }
 
 body {
