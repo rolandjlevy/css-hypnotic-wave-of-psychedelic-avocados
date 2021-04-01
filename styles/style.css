@@ -200,3 +200,30 @@ input[type=checkbox] {
   position: absolute;
   left: -1000px;
 }
+
+header.about {
+  position: absolute;
+  display: inline-block;
+  font-size: 1.5rem;
+  top: 20px;
+  right: 20px;
+}
+
+header.about > a {
+  color: var(--wireframe-colour);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+header.about > a:hover {
+  color: var(--wireframe-colour-bright);
+}
+
+.new-tab-icon::after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 600;
+  font-size: 1.25rem;
+  content: "\f35d";
+  margin-left: 10px;
+}
