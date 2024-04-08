@@ -8,7 +8,7 @@ Check out the wireframe option too.
 
 ### Links 🔗
 
-+ [Live demo](https://css-hypnotic-wave-of-psychedelic-avocados.rolandjlevy.repl.co/)
++ [Live demo](https://css-hypnotic-wave-of-psychedelic-avocados.vercel.app/)
 + [Source code](https://repl.it/@RolandJLevy/css-hypnotic-wave-of-psychedelic-avocados)
 + [Github repo](https://github.com/rolandjlevy/css-hypnotic-wave-of-psychedelic-avocados)
 
